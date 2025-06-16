@@ -1,9 +1,51 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+
+const socials = [
+  { name: "x", href: "", image: "../../public/assets/images/logo-x.svg" },
+  {
+    name: "github",
+    href: "",
+    image: "../../public/assets/images/logo-github.svg",
+  },
+  {
+    name: "linkedin",
+    href: "",
+    image: "../../public/assets/images/logo-linkedin.svg",
+  },
+  {
+    name: "frontend-mentor",
+    href: "",
+    image: "../../public/assets/images/logo-frontend-mentor.svg",
+  },
+];
 ---
 
 <Layout>
   <!-- COMPONENT -->
-  <h1 class="text-preset-1">Index Page!</h1>
+  <h1 class="text-preset-1 text-neutral-0">Hi, I'm Paulina 👋</h1>
+  <br />
+  <p class="text-preset-7 text-neutral-400">
+    I'm on a journey to become a front-end web developer. I love building little
+    projects, trying out new coding techniques, and sharing what I learn along
+    the way.
+    <br />
+    <br />
+    When I'm not at my desk, you'll find me reading, hiking through the mountains,
+    or challenging myself on rock-climbing walls. I started this blog to document
+    my progress, keep myself accountable, and hopefully inspire anyone else who's
+    learning to code. Welcome to my corner of the internet, and thanks for stopping
+    by! Latest Articles
+  </p>
+
+  <ul class="flex items-center gap-3 py-6">
+    {
+      socials.map((social) => (
+        <li class="flex justify-center items-center rounded-[10px] w-[40px] h-[40px] border border-neutral-700">
+          <img src={social.image} alt={social.name} />
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

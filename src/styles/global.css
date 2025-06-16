@@ -5,22 +5,18 @@
     src: url('../../public/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
 }
 
-/* @font-face {
-    font-family: 'DM Sans';
-    src: url('../../public/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf');
-} */
-
 @font-face {
     font-family: 'Fira Code';
     src: url('../../public/assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
 }
 
-
 @theme {
     --font-sans: 'DM Sans';
     --color-*: initial;
+
     --color-neutral-900 : #1C1A19;
     --color-neutral-800 : #201E1D;
+    --color-neutral-700 : #34302D;
     --color-neutral-600 : #4A4846;
     --color-neutral-400 : #C0BFBF;
     --color-neutral-300 : #DEDCDA;
@@ -49,11 +45,20 @@
 }
 
 @layer components {
+    body {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-neutral-900);
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+    }
     .text-preset-1 {
         font-size: 40px;
         font-weight: 800;
         line-height: 130%;
         letter-spacing: -1px;
+        color: var(--text-neutral-0);
     }
 
     .text-preset-2 {
@@ -61,6 +66,7 @@
         font-weight: 800;
         line-height: 130%;
         letter-spacing: -0.5px;
+        color: var(--text-neutral-0);
     }
 
     .text-preset-3 {
@@ -68,6 +74,7 @@
         font-weight: 700;
         line-height: 130%;
         letter-spacing: -0.5px;
+        color: var(--text-neutral-0);
     }
 
     .text-preset-4 {
@@ -75,6 +82,7 @@
         font-weight: 600;
         line-height: 130%;
         letter-spacing: -0.5px;
+        color: var(--text-neutral-0);
     }
 
     .text-preset-5 {
@@ -82,6 +90,7 @@
         font-weight: 600;
         line-height: 130%;
         letter-spacing: -0.5px;
+        color: var(--text-neutral-0);
     }
 
     .text-preset-6 {
@@ -89,6 +98,7 @@
         font-weight: 500;
         line-height: 150%;
         letter-spacing: -0.5px;
+        color: var(--text-neutral-0);
     }
 
     .text-preset-7 {
@@ -96,6 +106,7 @@
         font-weight: 400;
         line-height: 150%;
         letter-spacing: -0.2px;
+        color: var(--text-neutral-400);
     }
 
     .text-preset-7-semibold {
@@ -103,6 +114,7 @@
         font-weight: 500;
         line-height: 150%;
         letter-spacing: -0.2px;
+        color: var(--text-neutral-400);
     }
 
     .text-preset-8 {
@@ -110,6 +122,7 @@
         font-weight: 400;
         line-height: 130%;
         letter-spacing: -0.2px;
+        color: var(--text-neutral-400);
     }
 
     .text-preset-8-italic {
@@ -117,10 +130,12 @@
         font-weight: 400;
         line-height: 130%;
         letter-spacing: -0.2px;
+        color: var(--text-neutral-400);
         font-style: italic;
     }
 
     .text-preset-9 {
+        font-family: 'Fira Code';
         font-size: 16px;
         font-weight: 400;
         line-height: 146%;
