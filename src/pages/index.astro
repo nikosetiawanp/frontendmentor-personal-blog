@@ -1,30 +1,8 @@
 ---
 import Divider from "../components/Divider.astro";
 import RecentArticles from "../components/RecentArticles.astro";
+import Socials from "../components/Socials.astro";
 import Layout from "../layouts/Layout.astro";
-
-const socials = [
-  {
-    name: "x",
-    href: "",
-    image: import.meta.env.BASE_URL + "/assets/images/logo-x.svg",
-  },
-  {
-    name: "github",
-    href: "",
-    image: import.meta.env.BASE_URL + "/assets/images/logo-github.svg",
-  },
-  {
-    name: "linkedin",
-    href: "",
-    image: import.meta.env.BASE_URL + "/assets/images/logo-linkedin.svg",
-  },
-  {
-    name: "frontend-mentor",
-    href: "",
-    image: import.meta.env.BASE_URL + "/assets/images/logo-frontend-mentor.svg",
-  },
-];
 ---
 
 <Layout>
@@ -43,15 +21,7 @@ const socials = [
       inspire anyone else who's learning to code. Welcome to my corner of the
       internet, and thanks for stopping by!
     </p>
-    <ul class="flex items-center gap-3">
-      {
-        socials.map((social) => (
-          <li class="flex justify-center items-center rounded-[10px] w-[40px] h-[40px] border border-neutral-700">
-            <img src={social.image} alt={social.name} />
-          </li>
-        ))
-      }
-    </ul>
+    <Socials size="large" />
   </section>
   <Divider />
   <RecentArticles />

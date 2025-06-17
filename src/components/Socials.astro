@@ -1,7 +1,5 @@
 ---
-import Divider from "./Divider.astro";
-import Socials from "./Socials.astro";
-
+const { size } = Astro.props;
 const socials = [
   {
     name: "x",
@@ -26,19 +24,21 @@ const socials = [
 ];
 ---
 
-<footer class="w-full mt-auto">
-  <Divider />
-  <section class="flex py-4">
-    <span class="mr-auto">Made with ❤️ and ☕️</span>
-    <Socials size="small" />
-    <!-- <ul class="flex gap-4">
-      {
-        socials.map((social) => (
-          <a href={social.href}>
-            <img src={social.image} alt={"logo-" + social.name} />
-          </a>
-        ))
-      }
-    </ul> -->
-  </section>
-</footer>
+<ul class=`flex items-center ${size == 'large' ? 'gap-3' : 'gap-4'}`>
+  {
+    socials.map((social) => (
+      <li>
+        <a
+          href=""
+          class={
+            size == "large"
+              ? "flex justify-center items-center rounded-[10px] w-[40px] h-[40px] border border-neutral-700"
+              : ""
+          }
+        >
+          <img src={social.image} alt={social.name} />
+        </a>
+      </li>
+    ))
+  }
+</ul>

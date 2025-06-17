@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'DM Sans';
-    src: url('frontendmentor-personal-blog/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
+    src: url('assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
 }
 
 @font-face {
     font-family: 'Fira Code';
-    src: url('frontendmentor-personal-blog/assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
+    src: url('assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
 }
 
 @theme {
