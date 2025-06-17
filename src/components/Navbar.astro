@@ -1,4 +1,6 @@
 ---
+import Divider from "./Divider.astro";
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Blog", href: "/blog" },
@@ -12,15 +14,20 @@ const navLinks = [
 >
   <!-- image -->
   <div class="w-[40px] h-[40px] rounded-xl overflow-hidden mr-auto">
-    <img src="/public/assets/images/image-avatar.jpg" alt="image-avatar" />
+    <img
+      src={import.meta.env.BASE_URL + "/assets/images/image-avatar.jpg"}
+      alt="image-avatar"
+    />
   </div>
 
   <!-- links -->
   <ul class="hidden lg:flex items-center gap-6 mr-5 ml-auto">
     {
       navLinks.map((navLink) => (
-        <li class="text-preset-8 text-neutral-400">
-          <a href={navLink.href}>{navLink.name}</a>
+        <li>
+          <a class="text-preset-8" href={navLink.href}>
+            {navLink.name}
+          </a>
         </li>
       ))
     }
@@ -31,30 +38,39 @@ const navLinks = [
     class="flex lg:hidden justify-center items-center w-[40px] h-[40px] rounded-lg hover:cursor-pointer ml-auto relative"
     id="hamburger"
   >
-    <img src="../../public/assets/images/icon-menu.svg" alt="icon-theme" />
+    <img
+      src={import.meta.env.BASE_URL + "/assets/images/icon-menu.svg"}
+      alt="icon-theme"
+    />
   </button>
 
   <!-- theme button -->
   <button
     class="flex justify-center items-center w-[40px] h-[40px] rounded-lg border hover:cursor-pointer border-neutral-700 bg-neutral-900"
   >
-    <img src="../../public/assets/images/icon-sun.svg" alt="icon-theme" />
+    <img
+      src={import.meta.env.BASE_URL + "/assets/images/icon-sun.svg"}
+      alt="icon-theme"
+    />
   </button>
 
   <!-- dropdown -->
   <div
     id="dropdown"
-    class="hidden w-full h-fit bg-neutral-800 border border-neutral-700 p-3 rounded-[10px] absolute left-0 top-16 transition-all"
+    class="hidden w-full h-fit bg-neutral-800 border border-neutral-700 p-3 rounded-[10px] absolute left-0 top-16 transition-all drop-shadow-2xl"
   >
     <ul class="flex flex-col gap-1.5 ml-auto">
       {
         navLinks.map((navLink, index) => (
           <>
-            <li class="text-preset-8 text-neutral-400">
-              <a href={navLink.href}>{navLink.name}</a>
+            <li>
+              <a class="text-preset-8" href={navLink.href}>
+                {navLink.name}
+              </a>
             </li>
             {index < navLinks.length - 1 && (
-              <hr class="w-full border-0.5 border-neutral-700" />
+              <Divider />
+              //   <hr class="w-full border-0.5 border-neutral-700" />
             )}
           </>
         ))

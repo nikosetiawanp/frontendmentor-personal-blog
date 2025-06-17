@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'DM Sans';
-    src: url('../../public/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
+    src: url('assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
 }
 
 @font-face {
     font-family: 'Fira Code';
-    src: url('../../public/assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
+    src: url('assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
 }
 
 @theme {
@@ -53,60 +53,60 @@
         display: flex;
         justify-content: center;
     }
-    .text-preset-1 {
+    h1, .text-preset-1 {
         font-size: 40px;
         font-weight: 800;
         line-height: 130%;
         letter-spacing: -1px;
-        color: var(--text-neutral-0);
+        color: var(--color-neutral-0);
     }
 
-    .text-preset-2 {
+    h2, .text-preset-2 {
         font-size: 32px;
         font-weight: 800;
         line-height: 130%;
         letter-spacing: -0.5px;
-        color: var(--text-neutral-0);
+        color: var(--color-neutral-0);
     }
 
-    .text-preset-3 {
+    h3, .text-preset-3 {
         font-size: 28px;
         font-weight: 700;
         line-height: 130%;
         letter-spacing: -0.5px;
-        color: var(--text-neutral-0);
+        color: var(--color-neutral-0);
     }
 
-    .text-preset-4 {
+    h4, .text-preset-4 {
         font-size: 24px;
         font-weight: 600;
         line-height: 130%;
         letter-spacing: -0.5px;
-        color: var(--text-neutral-0);
+        color: var(--color-neutral-0);
     }
 
-    .text-preset-5 {
+    h5, .text-preset-5 {
         font-size: 20px;
         font-weight: 600;
         line-height: 130%;
         letter-spacing: -0.5px;
-        color: var(--text-neutral-0);
+        color: var(--color-neutral-0);
     }
 
-    .text-preset-6 {
+    h6, .text-preset-6 {
         font-size: 18px;
         font-weight: 500;
         line-height: 150%;
         letter-spacing: -0.5px;
-        color: var(--text-neutral-0);
+        color: var(--color-neutral-0);
     }
 
-    .text-preset-7 {
+    p, .text-preset-7 {
         font-size: 18px;
         font-weight: 400;
         line-height: 150%;
         letter-spacing: -0.2px;
-        color: var(--text-neutral-400);
+        color: var(--color-neutral-400);
     }
 
     .text-preset-7-semibold {
@@ -114,15 +114,15 @@
         font-weight: 500;
         line-height: 150%;
         letter-spacing: -0.2px;
-        color: var(--text-neutral-400);
+        color: var(--color-neutral-400);
     }
 
-    .text-preset-8 {
+    span, .text-preset-8 {
         font-size: 16px;
         font-weight: 400;
         line-height: 130%;
         letter-spacing: -0.2px;
-        color: var(--text-neutral-400);
+        color: var(--color-neutral-400);
     }
 
     .text-preset-8-italic {
@@ -130,7 +130,7 @@
         font-weight: 400;
         line-height: 130%;
         letter-spacing: -0.2px;
-        color: var(--text-neutral-400);
+        color: var(--color-neutral-400);
         font-style: italic;
     }
 

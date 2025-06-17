@@ -1,27 +1,34 @@
 ---
+import Divider from "./Divider.astro";
+
 const socials = [
-  { name: "x", href: "", image: "../../public/assets/images/logo-x.svg" },
+  {
+    name: "x",
+    href: "",
+    image: import.meta.env.BASE_URL + "/assets/images/logo-x.svg",
+  },
   {
     name: "github",
     href: "",
-    image: "../../public/assets/images/logo-github.svg",
+    image: import.meta.env.BASE_URL + "/assets/images/logo-github.svg",
   },
   {
     name: "linkedin",
     href: "",
-    image: "../../public/assets/images/logo-linkedin.svg",
+    image: import.meta.env.BASE_URL + "/assets/images/logo-linkedin.svg",
   },
   {
     name: "frontend-mentor",
     href: "",
-    image: "../../public/assets/images/logo-frontend-mentor.svg",
+    image: import.meta.env.BASE_URL + "/assets/images/logo-frontend-mentor.svg",
   },
 ];
 ---
 
 <footer class="w-full mt-auto">
-  <section class="flex py-4 border-t border-neutral-700">
-    <p class="text-preset-8 mr-auto text-neutral-400">Made with ❤️ and ☕️</p>
+  <Divider />
+  <section class="flex py-4">
+    <span class="mr-auto">Made with ❤️ and ☕️</span>
     <ul class="flex gap-4">
       {
         socials.map((social) => (
