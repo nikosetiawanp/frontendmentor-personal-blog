@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'DM Sans';
-    src: url('assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
+    src: url('../public/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
 }
 
 @font-face {
     font-family: 'Fira Code';
-    src: url('assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
+    src: url('../public/assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
 }
 
 @theme {
@@ -101,7 +101,7 @@
         color: var(--color-neutral-0);
     }
 
-    p, .text-preset-7 {
+    p, li, .text-preset-7 {
         font-size: 18px;
         font-weight: 400;
         line-height: 150%;
@@ -140,5 +140,9 @@
         font-weight: 400;
         line-height: 146%;
         letter-spacing: -0.4px;
+    }
+
+    svg {
+        fill: currentColor;
     }
 }
