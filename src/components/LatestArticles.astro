@@ -1,20 +1,24 @@
 ---
 import data from "../data.json";
 import { formatDate } from "../scripts/formatDate";
+
+const allPosts = Object.values(
+  import.meta.glob("../content/blog/*.md", { eager: true })
+);
 ---
 
 <section class="flex flex-col gap-8">
   <h2>Latest Articles</h2>
   <div class="flex flex-col gap-6">
     {
-      data.map((data, index) =>
+      allPosts.map((post: any, index) =>
         index < 5 ? (
           <div class="flex flex-col gap-2">
             <a class="text-preset-5" href="/">
-              {data.title}
+              {post.frontmatter.title}
             </a>
             <span class="text-preset-8-italic">
-              {formatDate(data.publishedAt)}
+              {formatDate(post.frontmatter.publishedAt)}
             </span>
           </div>
         ) : (
