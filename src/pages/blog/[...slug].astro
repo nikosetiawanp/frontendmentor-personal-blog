@@ -1,11 +1,12 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../scripts/formatDate";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { slug: post.slug },
     props: { post },
   }));
 }
@@ -15,5 +16,12 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-  <Content />
+  <section class="flex flex-col gap-3">
+    <h1>{post.data.title}</h1>
+    <span class="text-preset-8-italic">{formatDate(post.data.publishedAt)}</span
+    >
+    <div class="flex flex-col gap-6">
+      <Content />
+    </div>
+  </section>
 </Layout>

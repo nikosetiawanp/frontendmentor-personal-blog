@@ -1,11 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import Divider from "../components/Divider.astro";
 import Layout from "../layouts/Layout.astro";
 import { formatDate } from "../scripts/formatDate";
 
-const allPosts = Object.values(
-  import.meta.glob("../content/blog/*.md", { eager: true })
-);
+const allPosts = await getCollection("blog");
 ---
 
 <Layout>
@@ -23,14 +22,16 @@ const allPosts = Object.values(
         allPosts.map((post: any, index) => (
           <>
             <div class="flex flex-col gap-2">
-              <a class="text-preset-5 hover:cursor-pointer" href={post.url}>
-                {post.frontmatter.title}
+              <a
+                class="text-preset-5 hover:cursor-pointer"
+                href={import.meta.env.BASE_URL + "/blog/" + post.slug}
+              >
+                {post.data.title}
               </a>
               <p class="text-preset-8-italic">
-                {formatDate(post.frontmatter.publishedAt)}
+                {formatDate(post.data.publishedAt)}
               </p>
-              <p>{post.frontmatter.description}</p>
-              <p>{post.frontmatter.tags}</p>
+              <p>{post.data.description}</p>
             </div>
             {index < allPosts.length - 1 ? <Divider /> : ""}
           </>

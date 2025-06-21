@@ -1,10 +1,9 @@
 ---
 import data from "../data.json";
 import { formatDate } from "../scripts/formatDate";
+import { getCollection } from "astro:content";
 
-const allPosts = Object.values(
-  import.meta.glob("../content/blog/*.md", { eager: true })
-);
+const allPosts = await getCollection("blog");
 ---
 
 <section class="flex flex-col gap-8">
@@ -14,11 +13,14 @@ const allPosts = Object.values(
       allPosts.map((post: any, index) =>
         index < 5 ? (
           <div class="flex flex-col gap-2">
-            <a class="text-preset-5" href="/">
-              {post.frontmatter.title}
+            <a
+              class="text-preset-5"
+              href={import.meta.env.BASE_URL + "/blog/" + post.slug}
+            >
+              {post.data.title}
             </a>
             <span class="text-preset-8-italic">
-              {formatDate(post.frontmatter.publishedAt)}
+              {formatDate(post.data.publishedAt)}
             </span>
           </div>
         ) : (
