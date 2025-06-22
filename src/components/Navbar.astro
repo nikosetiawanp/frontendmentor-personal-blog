@@ -21,7 +21,7 @@ const navLinks = [
   </div>
 
   <!-- links -->
-  <ul class="hidden lg:flex items-center gap-6 mr-5 ml-auto">
+  <ul class="hidden lg:flex items-center gap-6 mr-5 ml-auto list-none pl-0">
     {
       navLinks.map((navLink) => (
         <li>
@@ -59,7 +59,7 @@ const navLinks = [
     id="dropdown"
     class="hidden w-full h-fit bg-neutral-800 border border-neutral-700 p-3 rounded-[10px] absolute left-0 top-16 transition-all drop-shadow-2xl"
   >
-    <ul class="flex flex-col gap-1.5 ml-auto">
+    <ul class="flex flex-col gap-1.5 ml-auto list-none pl-0">
       {
         navLinks.map((navLink, index) => (
           <>
