@@ -49,13 +49,19 @@ const result = addNumbers(5, 7);
 console.log(`The sum of 5 and 7 is: ${result}`);
 ```
 
-- Line 1 uses prompt() to get input from the user.
+```js
+<div class="container">
+    <h1>Hello, World!</h1>
+</div>
+```
+
+- Line 1 uses `prompt()` to get input from the user.
 
 - Line 2 uses template literals (the backticks) to insert userName into the string.
 
 - Lines 3–7 define a function to add two numbers, then return the result.
 
-- Line 10 calls addNumbers() and logs the result to the console.
+- Line 10 calls `addNumbers()` and logs the result to the console.
 
 I love these little examples because they showcase just how straightforward JavaScript can be. Of course, there's so much more to learn, but this is a neat place to start.
 

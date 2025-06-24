@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
+import customTheme from './src/scripts/custom-theme';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,8 +11,10 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
     markdown: {
+      syntaxHighlight: 'shiki',
       shikiConfig: {
-        theme: 'github-dark'
+        // @ts-ignore
+        theme: customTheme,
       }
     }
 });
