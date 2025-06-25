@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 import customTheme from './src/scripts/custom-theme';
+import { rehypeShiki } from '@astrojs/markdown-remark';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,6 @@ export default defineConfig({
       shikiConfig: {
         // @ts-ignore
         theme: customTheme,
-      }
+      },
     }
 });

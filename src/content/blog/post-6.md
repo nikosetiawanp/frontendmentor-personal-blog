@@ -49,12 +49,6 @@ const result = addNumbers(5, 7);
 console.log(`The sum of 5 and 7 is: ${result}`);
 ```
 
-```js
-<div class="container">
-    <h1>Hello, World!</h1>
-</div>
-```
-
 - Line 1 uses `prompt()` to get input from the user.
 
 - Line 2 uses template literals (the backticks) to insert userName into the string.
@@ -76,3 +70,9 @@ JavaScript initially felt intimidating, but after a few days of experimenting, I
 - Check documentation like MDN (Mozilla Developer Network) whenever you're stuck.
 
 Most importantly, keep it fun! I'm excited to continue exploring more complex concepts—like arrays, objects, and eventually frameworks like React. Thanks for reading, and happy coding!
+
+> [!NOTE]
+> This is a note callout.
+
+> [!WARNING]
+> This is a warning callout.

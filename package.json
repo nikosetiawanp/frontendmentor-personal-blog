@@ -14,5 +14,8 @@
     "astro": "^5.9.3",
     "shiki": "^3.7.0",
     "tailwindcss": "^4.1.10"
+  },
+  "devDependencies": {
+    "@shikijs/rehype": "^3.7.0"
   }
 }
