@@ -31,50 +31,50 @@
 </form>
 
 <script>
-  import { actions } from "astro:actions";
+  // import { actions } from "astro:actions";
 
-  const form = document.querySelector("form");
-  form?.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const { error } = await actions.newsletter(formData);
+  // const form = document.querySelector("form");
+  // form?.addEventListener("submit", async (event) => {
+  //   event.preventDefault();
+  //   const formData = new FormData(form);
+  //   const { error } = await actions.newsletter(formData);
 
-    const email = document.getElementById("email");
-    const errorMessage = document.getElementById("error-message");
-    const successMessage = document.getElementById("success-message");
+  //   const email = document.getElementById("email");
+  //   const errorMessage = document.getElementById("error-message");
+  //   const successMessage = document.getElementById("success-message");
 
-    const showError = () => {
-      email?.classList.remove("border-neutral-600");
-      email?.classList.add("border-red-400");
-      errorMessage?.classList.remove("hidden");
-      errorMessage?.classList.add("flex");
-    };
+  //   const showError = () => {
+  //     email?.classList.remove("border-neutral-600");
+  //     email?.classList.add("border-red-400");
+  //     errorMessage?.classList.remove("hidden");
+  //     errorMessage?.classList.add("flex");
+  //   };
 
-    const hideError = () => {
-      email?.classList.remove("border-red-400");
-      errorMessage?.classList.remove("flex");
-      errorMessage?.classList.add("hidden");
-    };
+  //   const hideError = () => {
+  //     email?.classList.remove("border-red-400");
+  //     errorMessage?.classList.remove("flex");
+  //     errorMessage?.classList.add("hidden");
+  //   };
 
-    const showSuccess = () => {
-      email?.classList.remove("border-neutral-600");
-      email?.classList.add("border-green-500");
-      successMessage?.classList.remove("hidden");
-      successMessage?.classList.add("flex");
-    };
+  //   const showSuccess = () => {
+  //     email?.classList.remove("border-neutral-600");
+  //     email?.classList.add("border-green-500");
+  //     successMessage?.classList.remove("hidden");
+  //     successMessage?.classList.add("flex");
+  //   };
 
-    const hideSuccess = () => {
-      email?.classList.remove("border-green-500");
-      email?.classList.add("border-neutral-600");
-      successMessage?.classList.remove("flex");
-      successMessage?.classList.add("hidden");
-    };
+  //   const hideSuccess = () => {
+  //     email?.classList.remove("border-green-500");
+  //     email?.classList.add("border-neutral-600");
+  //     successMessage?.classList.remove("flex");
+  //     successMessage?.classList.add("hidden");
+  //   };
 
-    if (error) {
-      showError();
-    } else {
-      hideError();
-      showSuccess();
-    }
-  });
+  //   if (error) {
+  //     showError();
+  //   } else {
+  //     hideError();
+  //     showSuccess();
+  //   }
+  // });
 </script>
