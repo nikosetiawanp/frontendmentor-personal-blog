@@ -6,11 +6,15 @@ import SunIcon from "../../public/assets/images/icon-sun.svg";
 import MoonIcon from "../../public/assets/images/icon-moon.svg";
 
 const navLinks = [
-  { name: "Home", href: import.meta.env.BASE_URL },
-  { name: "Blog", href: import.meta.env.BASE_URL + "/blog" },
-  { name: "About", href: import.meta.env.BASE_URL + "/about" },
-  { name: "Newsletter", href: import.meta.env.BASE_URL + "/newsletter" },
+  { name: "Home", href: "" },
+  { name: "Blog", href: "blog" },
+  { name: "About", href: "about" },
+  { name: "Newsletter", href: "newsletter" },
 ];
+
+const url = new URL(Astro.url);
+const segments = url.pathname.split("/");
+const endpoint = segments[2];
 ---
 
 <nav
@@ -29,7 +33,10 @@ const navLinks = [
     {
       navLinks.map((navLink) => (
         <li>
-          <a class="text-preset-8" href={navLink.href}>
+          <a
+            class={`text-preset-8 ${navLink.href == endpoint ? "underline decoration-blue-500 decoration-4" : ""} `}
+            href={import.meta.env.BASE_URL + "/" + navLink.href}
+          >
             {navLink.name}
           </a>
         </li>
