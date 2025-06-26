@@ -148,9 +148,6 @@
         letter-spacing: -0.4px;
     }
 
-    /* svg {
-        fill: var(--color-red-400);
-    } */
     hr {
         border-width: 1px;
         border-color: var(--color-neutral-700);
@@ -227,18 +224,16 @@
     overflow-x: auto;
     }
 
-    blockquote:has(> strong:contains("NOTE")) {
-    border-left: 4px solid #007acc;
-    background: #e6f4ff;
+    :where(.note) {
+    border-left: 4px solid blue;
     padding: 1em;
-    border-radius: 6px;
+    background: #eef;
     }
 
-    blockquote:has(> strong:contains("WARNING")) {
-    border-left: 4px solid #e69b00;
-    background: #fff4e5;
+    :where(.warning) {
+    border-left: 4px solid orange;
     padding: 1em;
-    border-radius: 6px;
+    background: #ffe;
     }
     
 }
