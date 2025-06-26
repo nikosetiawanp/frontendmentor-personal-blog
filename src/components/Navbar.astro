@@ -1,5 +1,9 @@
 ---
 import Divider from "./Divider.astro";
+import MenuIcon from "../../public/assets/images/icon-menu.svg";
+import MenuCloseIcon from "../../public/assets/images/icon-menu-close.svg";
+import SunIcon from "../../public/assets/images/icon-sun.svg";
+import MoonIcon from "../../public/assets/images/icon-moon.svg";
 
 const navLinks = [
   { name: "Home", href: import.meta.env.BASE_URL },
@@ -33,18 +37,23 @@ const navLinks = [
     }
   </ul>
 
-  <!-- hamburger -->
+  <!-- Menu button -->
   <button
-    class="flex lg:hidden justify-center items-center w-[40px] h-[40px] rounded-lg hover:cursor-pointer ml-auto relative"
-    id="hamburger"
+    class="flex lg:hidden justify-center items-center w-[40px] h-[40px] rounded-lg hover:cursor-pointer ml-auto relative mr-1.5"
+    id="menu-button"
   >
-    <img
-      src={import.meta.env.BASE_URL + "/assets/images/icon-menu.svg"}
-      alt="icon-theme"
-    />
+    <MenuIcon class="stroke-neutral-0" />
   </button>
 
-  <!-- theme button -->
+  <!-- Menu close button -->
+  <button
+    class="hidden lg:hidden justify-center items-center w-[40px] h-[40px] rounded-lg hover:cursor-pointer ml-auto relative bg-neutral-0 mr-1.5"
+    id="menu-close-button"
+  >
+    <MenuCloseIcon class="stroke-neutral-900" />
+  </button>
+
+  <!-- Theme button -->
   <button
     class="flex justify-center items-center w-[40px] h-[40px] rounded-lg border hover:cursor-pointer border-neutral-700 bg-neutral-900"
   >
@@ -77,10 +86,29 @@ const navLinks = [
 </nav>
 
 <script type="module">
-  const hamburger = document.getElementById("hamburger");
+  const menuButton = document.getElementById("menu-button");
+  const menuCloseButton = document.getElementById("menu-close-button");
   const dropdown = document.getElementById("dropdown");
 
-  hamburger.addEventListener("click", () => {
+  // open
+  menuButton.addEventListener("click", () => {
     dropdown.classList.toggle("hidden");
+
+    menuButton.classList.remove("flex");
+    menuButton.classList.add("hidden");
+
+    menuCloseButton.classList.remove("hidden");
+    menuCloseButton.classList.add("flex");
+  });
+
+  // close
+  menuCloseButton.addEventListener("click", () => {
+    dropdown.classList.toggle("hidden");
+
+    menuButton.classList.remove("hidden");
+    menuButton.classList.add("flex");
+
+    menuCloseButton.classList.remove("flex");
+    menuCloseButton.classList.add("hidden");
   });
 </script>

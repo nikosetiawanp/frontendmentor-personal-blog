@@ -148,9 +148,9 @@
         letter-spacing: -0.4px;
     }
 
-    svg {
-        fill: currentColor;
-    }
+    /* svg {
+        fill: var(--color-red-400);
+    } */
     hr {
         border-width: 1px;
         border-color: var(--color-neutral-700);

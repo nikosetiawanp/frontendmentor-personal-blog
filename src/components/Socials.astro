@@ -1,25 +1,30 @@
 ---
 const { size } = Astro.props;
+import GithubLogo from "../../public/assets/images/logo-github.svg";
+import XLogo from "../../public/assets/images/logo-x.svg";
+import LinkedinLogo from "../../public/assets/images/logo-linkedin.svg";
+import FrontendmentorLogo from "../../public/assets/images/logo-frontend-mentor.svg";
+
 const socials = [
   {
     name: "x",
     href: "",
-    image: import.meta.env.BASE_URL + "/assets/images/logo-x.svg",
+    image: XLogo,
   },
   {
     name: "github",
     href: "",
-    image: import.meta.env.BASE_URL + "/assets/images/logo-github.svg",
+    image: GithubLogo,
   },
   {
     name: "linkedin",
     href: "",
-    image: import.meta.env.BASE_URL + "/assets/images/logo-linkedin.svg",
+    image: LinkedinLogo,
   },
   {
     name: "frontend-mentor",
     href: "",
-    image: import.meta.env.BASE_URL + "/assets/images/logo-frontend-mentor.svg",
+    image: FrontendmentorLogo,
   },
 ];
 ---
@@ -28,19 +33,25 @@ const socials = [
   class=`flex items-center ${size == 'large' ? 'gap-3' : 'gap-4'} list-none pl-0`
 >
   {
-    socials.map((social) => (
-      <li>
-        <a
-          href=""
-          class={
-            size == "large"
-              ? "flex justify-center items-center rounded-[10px] w-[40px] h-[40px] border border-neutral-700"
-              : ""
-          }
-        >
-          <img class="text-neutral-0" src={social.image} alt={social.name} />
-        </a>
-      </li>
-    ))
+    socials.map((social) =>
+      size == "large" ? (
+        // Large icon
+        <li class="fill-neutral-0">
+          <a
+            href={social.name + "-logo"}
+            class="flex justify-center items-center rounded-[10px] w-[40px] h-[40px] border border-neutral-700"
+          >
+            <social.image class="fill-neutral-0" />
+          </a>
+        </li>
+      ) : (
+        // Small icon
+        <li class="fill-neutral-0">
+          <a href="" class="">
+            <social.image class="fill-neutral-400" />
+          </a>
+        </li>
+      )
+    )
   }
 </ul>
