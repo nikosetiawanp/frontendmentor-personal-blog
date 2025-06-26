@@ -4,6 +4,7 @@ import MenuIcon from "../../public/assets/images/icon-menu.svg";
 import MenuCloseIcon from "../../public/assets/images/icon-menu-close.svg";
 import SunIcon from "../../public/assets/images/icon-sun.svg";
 import MoonIcon from "../../public/assets/images/icon-moon.svg";
+import ThemeToggleButton from "./ThemeToggleButton.astro";
 
 const navLinks = [
   { name: "Home", href: "" },
@@ -18,7 +19,7 @@ const endpoint = segments[2];
 ---
 
 <nav
-  class="flex items-center w-full rounded-[10px] p-[6px] border border-neutral-700 bg-neutral-800 relative"
+  class="flex items-center w-full rounded-[10px] p-[6px] border border-neutral-200 dark:border-neutral-700 bg-neutral-0 dark:bg-neutral-800 relative"
 >
   <!-- image -->
   <div class="w-[40px] h-[40px] rounded-xl overflow-hidden mr-auto">
@@ -49,31 +50,24 @@ const endpoint = segments[2];
     class="flex lg:hidden justify-center items-center w-[40px] h-[40px] rounded-lg hover:cursor-pointer ml-auto relative mr-1.5"
     id="menu-button"
   >
-    <MenuIcon class="stroke-neutral-0" />
+    <MenuIcon class="stroke-neutral-900 dark:stroke-neutral-0" />
   </button>
 
   <!-- Menu close button -->
   <button
-    class="hidden lg:hidden justify-center items-center w-[40px] h-[40px] rounded-lg hover:cursor-pointer ml-auto relative bg-neutral-0 mr-1.5"
+    class="hidden lg:hidden justify-center items-center w-[40px] h-[40px] rounded-lg hover:cursor-pointer ml-auto relative bg-neutral-700 dark:bg-neutral-0 mr-1.5"
     id="menu-close-button"
   >
-    <MenuCloseIcon class="stroke-neutral-900" />
+    <MenuCloseIcon class="stroke-neutral-0 dark:stroke-neutral-900" />
   </button>
 
   <!-- Theme button -->
-  <button
-    class="flex justify-center items-center w-[40px] h-[40px] rounded-lg border hover:cursor-pointer border-neutral-700 bg-neutral-900"
-  >
-    <img
-      src={import.meta.env.BASE_URL + "/assets/images/icon-sun.svg"}
-      alt="icon-theme"
-    />
-  </button>
+  <ThemeToggleButton />
 
   <!-- dropdown -->
   <div
     id="dropdown"
-    class="hidden w-full h-fit bg-neutral-800 border border-neutral-700 p-3 rounded-[10px] absolute left-0 top-16 transition-all drop-shadow-2xl"
+    class="hidden w-full h-fit bg-neutral-0 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 p-3 rounded-[10px] absolute left-0 top-16 transition-all drop-shadow-2xl"
   >
     <ul class="flex flex-col gap-1.5 ml-auto list-none pl-0">
       {

@@ -20,7 +20,7 @@ const { Content } = await render(post);
 <Layout>
   <section class="flex flex-col gap-3">
     <h1>{post.data.title}</h1>
-    <span class="text-preset-8-italic">{formatDate(post.data.publishedAt)}</span
+    <span class="text-preset-8 italic">{formatDate(post.data.publishedAt)}</span
     >
     <div class="flex flex-col gap-6">
       <Content />

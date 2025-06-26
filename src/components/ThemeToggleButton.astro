@@ -1,0 +1,22 @@
+---
+import SunIcon from "../../public/assets/images/icon-sun.svg";
+import MoonIcon from "../../public/assets/images/icon-moon.svg";
+---
+
+<!-- Theme button -->
+<button
+  id="theme-toggle-button"
+  class="flex justify-center items-center w-[40px] h-[40px] rounded-lg border hover:cursor-pointer border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900"
+>
+  <SunIcon class="hidden dark:block" />
+  <MoonIcon class="dark:hidden" />
+</button>
+
+<script>
+  const root = document.documentElement;
+  const themeToggleButton = document.getElementById("theme-toggle-button");
+
+  themeToggleButton?.addEventListener("click", () => {
+    root.classList.toggle("dark");
+  });
+</script>
