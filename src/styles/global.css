@@ -223,17 +223,4 @@
     padding: 10px;
     overflow-x: auto;
     }
-
-    :where(.note) {
-    border-left: 4px solid blue;
-    padding: 1em;
-    background: #eef;
-    }
-
-    :where(.warning) {
-    border-left: 4px solid orange;
-    padding: 1em;
-    background: #ffe;
-    }
-    
 }

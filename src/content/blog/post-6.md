@@ -70,9 +70,3 @@ JavaScript initially felt intimidating, but after a few days of experimenting, I
 - Check documentation like MDN (Mozilla Developer Network) whenever you're stuck.
 
 Most importantly, keep it fun! I'm excited to continue exploring more complex concepts—like arrays, objects, and eventually frameworks like React. Thanks for reading, and happy coding!
-
-> [!NOTE]
-> This is a note callout.
-
-> [!WARNING]
-> This is a warning callout.
