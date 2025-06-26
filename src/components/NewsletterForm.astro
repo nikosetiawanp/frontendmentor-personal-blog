@@ -31,50 +31,59 @@
 </form>
 
 <script>
-  // import { actions } from "astro:actions";
+  const form = document.querySelector("form");
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const email = document.getElementById("email") as HTMLInputElement | null;
+    const errorMessage = document.getElementById("error-message");
+    const successMessage = document.getElementById("success-message");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // const form = document.querySelector("form");
-  // form?.addEventListener("submit", async (event) => {
-  //   event.preventDefault();
-  //   const formData = new FormData(form);
-  //   const { error } = await actions.newsletter(formData);
+    const showError = () => {
+      // Add red border
+      email?.classList.remove("border-neutral-600");
+      email?.classList.add("border-red-400");
 
-  //   const email = document.getElementById("email");
-  //   const errorMessage = document.getElementById("error-message");
-  //   const successMessage = document.getElementById("success-message");
+      // Show error message
+      errorMessage?.classList.remove("hidden");
+      errorMessage?.classList.add("flex");
+    };
 
-  //   const showError = () => {
-  //     email?.classList.remove("border-neutral-600");
-  //     email?.classList.add("border-red-400");
-  //     errorMessage?.classList.remove("hidden");
-  //     errorMessage?.classList.add("flex");
-  //   };
+    const hideError = () => {
+      // Remove red border
+      email?.classList.remove("border-red-400");
 
-  //   const hideError = () => {
-  //     email?.classList.remove("border-red-400");
-  //     errorMessage?.classList.remove("flex");
-  //     errorMessage?.classList.add("hidden");
-  //   };
+      // Hide error message
+      errorMessage?.classList.remove("flex");
+      errorMessage?.classList.add("hidden");
+    };
 
-  //   const showSuccess = () => {
-  //     email?.classList.remove("border-neutral-600");
-  //     email?.classList.add("border-green-500");
-  //     successMessage?.classList.remove("hidden");
-  //     successMessage?.classList.add("flex");
-  //   };
+    const showSuccess = () => {
+      // Show green border
+      email?.classList.remove("border-neutral-600");
+      email?.classList.add("border-green-500");
 
-  //   const hideSuccess = () => {
-  //     email?.classList.remove("border-green-500");
-  //     email?.classList.add("border-neutral-600");
-  //     successMessage?.classList.remove("flex");
-  //     successMessage?.classList.add("hidden");
-  //   };
+      // Show success message
+      successMessage?.classList.remove("hidden");
+      successMessage?.classList.add("flex");
+    };
 
-  //   if (error) {
-  //     showError();
-  //   } else {
-  //     hideError();
-  //     showSuccess();
-  //   }
-  // });
+    const hideSuccess = () => {
+      // Hide green border
+      email?.classList.remove("border-green-500");
+      email?.classList.add("border-neutral-600");
+
+      // Hide success message
+      successMessage?.classList.remove("flex");
+      successMessage?.classList.add("hidden");
+    };
+
+    if (!email || !emailRegex.test(email.value)) {
+      showError();
+      hideSuccess();
+    } else {
+      hideError();
+      showSuccess();
+    }
+  });
 </script>
