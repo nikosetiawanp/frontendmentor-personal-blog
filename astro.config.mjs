@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
+import darkTheme from './src/scripts/dark-theme';
+import lightTheme from './src/scripts/light-theme';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,8 +16,10 @@ export default defineConfig({
       syntaxHighlight: 'shiki',
       shikiConfig: {
         themes: {
-          light: 'github-light',
-          dark: 'github-dark'
+          // @ts-ignore
+          light: lightTheme,
+            // @ts-ignore
+          dark: darkTheme
         },
         defaultColor: false
       },

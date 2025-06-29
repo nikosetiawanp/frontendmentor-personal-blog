@@ -23,7 +23,6 @@ import MoonIcon from "../../public/assets/images/icon-moon.svg";
   const themeToggleButton = document.getElementById("theme-toggle-button");
   const savedTheme = localStorage.getItem("theme");
 
-  // Apply saved theme on load
   if (savedTheme) {
     root.classList.add(savedTheme);
   }
