@@ -8,22 +8,22 @@ import FrontendmentorLogo from "../../public/assets/images/logo-frontend-mentor.
 const socials = [
   {
     name: "x",
-    href: "",
+    href: "https://x.com/",
     image: XLogo,
   },
   {
     name: "github",
-    href: "",
+    href: "https://github.com/",
     image: GithubLogo,
   },
   {
     name: "linkedin",
-    href: "",
+    href: "https://linkedin.com/",
     image: LinkedinLogo,
   },
   {
     name: "frontend-mentor",
-    href: "",
+    href: "https://frontendmentor.io/",
     image: FrontendmentorLogo,
   },
 ];
@@ -38,7 +38,7 @@ const socials = [
         // Large icon
         <li class="fill-neutral-0">
           <a
-            href={social.name + "-logo"}
+            href={social.href}
             class="flex justify-center items-center rounded-[10px] w-[40px] h-[40px] border border-neutral-200 dark:border-neutral-700 bg-neutral-0 dark:bg-neutral-800"
           >
             <social.image class="fill-neutral-700 dark:fill-neutral-0" />
@@ -47,7 +47,7 @@ const socials = [
       ) : (
         // Small icon
         <li class="fill-neutral-0">
-          <a href="" class="">
+          <a href={social.href} class="">
             <social.image class="fill-neutral-600 dark:fill-neutral-400" />
           </a>
         </li>
