@@ -14,7 +14,7 @@ export default defineConfig({
       syntaxHighlight: 'shiki',
       shikiConfig: {
         themes: {
-          light: 'gruvbox-light-medium',
+          light: 'github-light',
           dark: 'github-dark'
         },
         defaultColor: false
