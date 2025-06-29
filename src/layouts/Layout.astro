@@ -5,7 +5,7 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -33,3 +33,11 @@ import "../styles/global.css";
     </div>
   </body>
 </html>
+
+<script>
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    root.classList.add(savedTheme);
+  }
+</script>

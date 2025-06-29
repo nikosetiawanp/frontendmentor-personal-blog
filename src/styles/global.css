@@ -204,9 +204,12 @@
 
     pre {
         border-radius: 12px;
-        border: 1px solid var(--color-neutral-700);
+        border: 1px solid var(--color-neutral-300);
         padding: 10px;
         overflow-x: auto;
+    }
+    .dark pre {
+        border: 1px solid var(--color-neutral-700);
     }
 
 
@@ -237,7 +240,6 @@
     .text-preset-5, .text-preset-6) {
         color: var(--color-neutral-0);
     }
-
     .dark :is(p, li, blockquote, span, tbody,
     .text-preset-7, .text-preset-8) {
         color: var(--color-neutral-400)
@@ -257,7 +259,14 @@
         border: 1px solid var(--color-neutral-700);
     }
 
-    html {
-        --shiki-color-background: var(--color-neutral-200);
+    .astro-code,
+    .astro-code span {
+        color: var(--shiki-light) !important;
+        background-color: var(--color-neutral-200) !important;
+    }
+    .dark :is(.astro-code,
+    .astro-code span) {
+        color: var(--shiki-dark) !important;
+        background-color: var(--color-neutral-800) !important;
     }
 }
