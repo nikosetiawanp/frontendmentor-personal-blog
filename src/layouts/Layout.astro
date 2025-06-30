@@ -17,16 +17,17 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Personal Blog</title>
   </head>
-  <body class="pb-0">
-    <div class="w-full max-w-[640px]">
+  <body class="pb-0 flex justify-center h-screen">
+    <div class="w-full max-w-[640px] flex flex-col min-h-screen">
       <Navbar />
-      <!-- outer padding -->
-      <div class="w-full px-2">
-        <!-- borders -->
+
+      <!-- Outer padding & content wrapper -->
+      <div class="w-full px-2 flex-1">
+        <!-- Borders -->
         <div
-          class="h-full flex flex-col gap-8 lg:gap-12 border-x border-neutral-200 dark:border-neutral-700 pt-8 px-3"
+          class="min-h-full flex flex-col gap-8 lg:gap-12 border-x border-neutral-200 dark:border-neutral-700 pt-8 px-3 flex-1"
         >
-          <slot />
+          <slot class="flex-1" />
           <Footer />
         </div>
       </div>
