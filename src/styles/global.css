@@ -1,14 +1,16 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+
 @font-face {
     font-family: 'DM Sans';
-    src: url('../public/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
+    src: url('/public/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf');
 }
+
 
 @font-face {
     font-family: 'Fira Code';
-    src: url('../public/assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
+    src: url('/public/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
 }
 
 @theme {
@@ -128,10 +130,6 @@
         font-weight: 400;
         line-height: 146%;
         letter-spacing: -0.4px;
-    }
-
-    hr {
-        border-width: 1px;
     }
 
     ul {

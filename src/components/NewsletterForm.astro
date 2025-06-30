@@ -1,5 +1,6 @@
 ---
-
+import SuccessIcon from "../assets/images/icon-success.svg";
+import ErrorIcon from "../assets/images/icon-error.svg";
 ---
 
 <form action="/submit" method="POST">
@@ -9,17 +10,23 @@
       type="text"
       id="email"
       name="email"
-      class=`border border-neutral-300 dark:border-neutral-600 bg-neutral-200 dark:bg-neutral-800 rounded-[10px] px-4 py-3 text-preset-7 w-full hover:cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:border-b-blue-500 active:border-blue-500`
+      class="border border-neutral-300 dark:border-neutral-600 bg-neutral-200 dark:bg-neutral-800 rounded-[10px] px-4 py-3 text-preset-7 w-full hover:cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:border-b-blue-500 active:border-blue-500"
       placeholder="email@example.com"
       required
     />
-    <span id="error-message" class="hidden text-red-400 gap-2 -mt-2">
-      <img src="/public/assets/images/icon-error.svg" alt="a" /> Please enter a valid
-      email address.
+    <span
+      id="error-message"
+      class="hidden text-red-600 dark:text-red-400 gap-2 -mt-2 items-center"
+    >
+      <ErrorIcon class="fill-red-600 dark:fill-red-400" />
+      Please enter a valid email address.
     </span>
-    <span id="success-message" class="hidden text-green-500 gap-2 -mt-2">
-      <img src="/public/assets/images/icon-success.svg" alt="a" /> You’re subscribed!
-      Check your inbox for updates.
+    <span
+      id="success-message"
+      class="hidden text-green-700 dark:text-green-500 gap-2 -mt-2 items-center"
+    >
+      <SuccessIcon class="fill-green-700 dark:fill-green-500" />
+      You’re subscribed! Check your inbox for updates.
     </span>
 
     <button
@@ -39,41 +46,37 @@
     const successMessage = document.getElementById("success-message");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const showError = () => {
-      // Add red border
-      email?.classList.remove("border-neutral-600");
-      email?.classList.add("border-red-400");
+    const resetBorders = () => {
+      email?.classList.remove(
+        "border-red-600",
+        "dark:border-red-400",
+        "border-green-700",
+        "dark:border-green-500",
+        "border-neutral-300",
+        "dark:border-neutral-600"
+      );
+    };
 
-      // Show error message
+    const showError = () => {
+      resetBorders();
+      email?.classList.add("border-red-600", "dark:border-red-400");
       errorMessage?.classList.remove("hidden");
       errorMessage?.classList.add("flex");
     };
 
     const hideError = () => {
-      // Remove red border
-      email?.classList.remove("border-red-400");
-
-      // Hide error message
       errorMessage?.classList.remove("flex");
       errorMessage?.classList.add("hidden");
     };
 
     const showSuccess = () => {
-      // Show green border
-      email?.classList.remove("border-neutral-600");
-      email?.classList.add("border-green-500");
-
-      // Show success message
+      resetBorders();
+      email?.classList.add("border-green-700", "dark:border-green-500");
       successMessage?.classList.remove("hidden");
       successMessage?.classList.add("flex");
     };
 
     const hideSuccess = () => {
-      // Hide green border
-      email?.classList.remove("border-green-500");
-      email?.classList.add("border-neutral-600");
-
-      // Hide success message
       successMessage?.classList.remove("flex");
       successMessage?.classList.add("hidden");
     };

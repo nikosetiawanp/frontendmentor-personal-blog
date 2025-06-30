@@ -1,8 +1,11 @@
 ---
 import Divider from "./Divider.astro";
-import MenuIcon from "../../public/assets/images/icon-menu.svg";
-import MenuCloseIcon from "../../public/assets/images/icon-menu-close.svg";
+import MenuIcon from "../assets/images/icon-menu.svg";
+import MenuCloseIcon from "../assets/images/icon-menu-close.svg";
 import ThemeToggleButton from "./ThemeToggleButton.astro";
+import { Image } from "astro:assets";
+
+import avatarImage from "../assets/images/image-avatar.jpg";
 
 const navLinks = [
   { name: "Home", href: "" },
@@ -19,15 +22,12 @@ const endpoint = segments[2];
 <nav
   class="flex items-center w-full rounded-[10px] p-[6px] border border-neutral-200 dark:border-neutral-700 bg-neutral-0 dark:bg-neutral-800 relative"
 >
-  <!-- image -->
+  <!-- Image -->
   <div class="w-[40px] h-[40px] rounded-xl overflow-hidden mr-auto">
-    <img
-      src={import.meta.env.BASE_URL + "/assets/images/image-avatar.jpg"}
-      alt="image-avatar"
-    />
+    <Image src={avatarImage} alt="avatar-image" />
   </div>
 
-  <!-- links -->
+  <!-- Links -->
   <ul class="hidden lg:flex items-center gap-6 mr-5 ml-auto list-none pl-0">
     {
       navLinks.map((navLink) => (

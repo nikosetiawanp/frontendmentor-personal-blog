@@ -1,6 +1,10 @@
 ---
 import Socials from "../components/Socials.astro";
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import imageWorkspaceSmall from "../assets/images/image-workspace-small.jpg";
+import imageWorkspaceLarge from "../assets/images/image-workspace-large.jpg";
 ---
 
 <Layout>
@@ -47,14 +51,14 @@ import Layout from "../layouts/Layout.astro";
       work, so I thought I’d share it with you:
     </p>
     <div class="w-full overflow-hidden rounded-lg md:rounded-xl">
-      <img
+      <Image
         class="md:hidden"
-        src="/public/assets/images/image-workspace-small.jpg"
+        src={imageWorkspaceSmall}
         alt="image-workspace-small"
       />
-      <img
+      <Image
         class="hidden md:flex"
-        src="/public/assets/images/image-workspace-large.jpg"
+        src={imageWorkspaceLarge}
         alt="image-workspace-large"
       />
     </div>
