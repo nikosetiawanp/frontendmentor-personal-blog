@@ -210,11 +210,11 @@
         border: 1px solid var(--color-neutral-700);
     }
 
-
     /* Light mode */
     body {
         background-color: var(--color-neutral-100);
     }
+    
     :is(h1, h2, h3, h4, h5, h6, thead,
     .text-preset-1, .text-preset-2,
     .text-preset-3, .text-preset-4,

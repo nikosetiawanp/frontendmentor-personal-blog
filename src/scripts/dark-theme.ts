@@ -4,9 +4,6 @@ export default {
   ...existingTheme,
   type: 'dark',
   name: 'dark-custom',
-  // colors: {
-  //   'editor.background': 'var(--color-neutral-800)'
-  // },
   tokenColors: [
     ...(existingTheme.tokenColors as any),
     {
